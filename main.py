@@ -145,16 +145,16 @@ def load_split_train_test(datadir, valid_size = .2):
     testloader = torch.utils.data.DataLoader(test_data,
                    shuffle=True, batch_size=64)
 
-    torch.save(train_data, 'traindata1.pth')
-    torch.save(test_data, 'testdata1.pth')
+    torch.save(train_data, './data/traindata1.pth')
+    torch.save(test_data, './data/testdata1.pth')
     return trainloader, testloader
 
 trainloader, testloader = load_split_train_test(data_dir, .2)
 print(len(trainloader))
 print(type(trainloader))
 
-torch.save(trainloader,'trainloader1.pth')
-torch.save(testloader,'testloader1.pth')
+torch.save(trainloader,'./data/trainloader1.pth')
+torch.save(testloader,'./data/testloader1.pth')
 
 
 

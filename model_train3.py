@@ -4,8 +4,8 @@ from torch import nn
 from torch import optim
 import torchvision
 
-trainloader = torch.load('trainloader.pth')
-testloader = torch.load('testloader.pth')
+trainloader = torch.load('./data/trainloader.pth')
+testloader = torch.load('./data/testloader.pth')
 
 
 device = torch.device("cuda" if torch.cuda.is_available()

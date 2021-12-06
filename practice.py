@@ -12,7 +12,7 @@ from torch.utils.data import Subset
 from PIL import Image
 from utils import evaluate_model, create_classification_report
 
-train_loader, test_loader = torch.load('trainloader.pth'), torch.load('testloader.pth')
+train_loader, test_loader = torch.load('./data/trainloader.pth'), torch.load('./data/testloader.pth')
 cuda_device = torch.device("cuda:0")
 
 img = Image.open("paronychia.jpg")
