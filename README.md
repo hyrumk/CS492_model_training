@@ -4,6 +4,18 @@ This code trains the model to use in android application for skin disease classi
 The application can be found on
 https://github.com/junstar98/CS492
 
+### Requirements
+
+```pip install -U scikit-learn```
+
+```pip install torchvision=0.11.1```
+
+```pip install pytorch=0.10.0```
+
+```pip install numpy=1.21.4```
+
+
+
 ### Step by Step Description 
 execute the following files in a given order.
 
