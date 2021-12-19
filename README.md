@@ -29,6 +29,16 @@ execute the following files in a given order.
 After following all these steps, you will have ```pruned_mobile_resnet18.ptl``` in the main directory. Use this ptl file in android java file.
 
 
+in ```final_models/```
+each pth or ptl files are trained models.
+```
+
+
+
+
+```
+
+
 pruning code based on
 https://leimao.github.io/blog/PyTorch-Pruning/
 
