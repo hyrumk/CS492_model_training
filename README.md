@@ -31,7 +31,52 @@ After following all these steps, you will have ```pruned_mobile_resnet18.ptl``` 
 
 in ```final_models/```
 each pth or ptl files are trained models.
+To load each model, refer to the following script.
+
 ```
+# Pruned ResNet18
+model_p18 = torchvision.models.resnet18(pretrained=True)
+
+model_p18.fc = nn.Sequential(nn.Linear(512, 256),
+                         nn.ReLU(),
+                         nn.Dropout(0.2),
+                         nn.Linear(256, 23),
+                         nn.LogSoftmax(dim=1))
+model_p18.load_state_dict(torch.load('./saved_model/resnet18_dermnet.pt'))
+model_p18.eval()
+
+# ResNet18
+model18 = torchvision.models.resnet18(pretrained=True)
+
+model18.fc = nn.Sequential(nn.Linear(512, 256),
+                         nn.ReLU(),
+                         nn.Dropout(0.2),
+                         nn.Linear(256, 23),
+                         nn.LogSoftmax(dim=1))
+model18.load_state_dict(torch.load('./final_models/best_resnet18_1.pth'))
+model18.eval()
+
+# ResNet50
+model50 = torchvision.models.resnet50(pretrained=True)
+
+model50.fc = nn.Sequential(nn.Linear(2048, 256),
+                         nn.ReLU(),
+                         nn.Dropout(0.2),
+                         nn.Linear(256, 23),
+                         nn.LogSoftmax(dim=1))
+model50.load_state_dict(torch.load('./final_models/best_resnet50.pth'))
+model50.eval()
+
+# MobileNet
+mobile_model = torchvision.models.mobilenet_v2(pretrained=True)
+
+mobile_model.fc = nn.Sequential(nn.Linear(512, 256),
+                         nn.ReLU(),
+                         nn.Dropout(0.2),
+                         nn.Linear(256, 23),
+                         nn.LogSoftmax(dim=1))
+mobile_model.load_state_dict(torch.load('./final_models/best_mobilenet(2).pth'))
+mobile_model.eval()
 
 
 
